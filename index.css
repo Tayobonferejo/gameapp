@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+main > div {
+    border: 1px solid blue;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows:  100px 100px 100px;
+}
