@@ -15,10 +15,18 @@ body {
 
 main > div {
     border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 main {
     display: grid;
     grid-template-columns: 100px 100px 100px;
     grid-template-rows:  100px 100px 100px;
+}
+
+i {
+    font-size: 48px;
 }
