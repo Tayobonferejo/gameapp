@@ -5,6 +5,8 @@ let xChoices = [];
 let oChoices = [];
 let change = true;
 let count = 0;
+const firstPlayer = "X";
+const secondPlayer = "O";
 
 main.addEventListener("click", (event) => {
     const cross = event.target;
@@ -25,63 +27,7 @@ main.addEventListener("click", (event) => {
         count = count + 1;
         xChoices.push([...main.children].indexOf(cross));
 
-          if (
-              xChoices.includes(2) &&
-              xChoices.includes(5) &&
-              xChoices.includes(8)
-            ) {
-              alert("X won");
-          }
-          else if (
-              xChoices.includes(2) &&
-              xChoices.includes(4) &&
-              xChoices.includes(6))
-              {
-                alert("X won");
-          }
-           else if (
-              xChoices.includes(0) &&
-              xChoices.includes(1) &&
-              xChoices.includes(2))
-              {
-                alert("X won");
-          }
-           else if (
-              xChoices.includes(0) &&
-              xChoices.includes(3) &&
-              xChoices.includes(6))
-              {
-                alert("X won");
-          }
-            else if (
-              xChoices.includes(1) &&
-              xChoices.includes(4) &&
-              xChoices.includes(7))
-              {
-                alert("X won");
-          }
-           else if (
-              xChoices.includes(0) &&
-              xChoices.includes(4) &&
-              xChoices.includes(8))
-              {
-                alert("X won");
-          }
-           else if (
-              xChoices.includes(3) &&
-              xChoices.includes(4) &&
-              xChoices.includes(5))
-              {
-                alert("X won");
-          }
-
-           else if (
-              xChoices.includes(6) &&
-              xChoices.includes(7) &&
-              xChoices.includes(8))
-              {
-                alert("X won");
-          }
+        winningLogic(xChoices, firstPlayer);
 
         console.log("x chooses:", xChoices);
     } else {
@@ -90,63 +36,7 @@ main.addEventListener("click", (event) => {
         count = count + 1;
         oChoices.push([...main.children].indexOf(cross));
 
-        if (
-              oChoices.includes(2) &&
-              oChoices.includes(5) &&
-              oChoices.includes(8)
-            ) {
-              alert("O won");
-          }
-          else if (
-              oChoices.includes(2) &&
-              oChoices.includes(4) &&
-              oChoices.includes(6))
-              {
-                alert("O won");
-          }
-           else if (
-              oChoices.includes(0) &&
-              oChoices.includes(1) &&
-              oChoices.includes(2))
-              {
-                alert("O won");
-          }
-           else if (
-              oChoices.includes(0) &&
-              oChoices.includes(3) &&
-              oChoices.includes(6))
-              {
-                alert("O won");
-          }
-            else if (
-              oChoices.includes(1) &&
-              oChoices.includes(4) &&
-              oChoices.includes(7))
-              {
-                alert("O won");
-          }
-           else if (
-              oChoices.includes(0) &&
-              oChoices.includes(4) &&
-              oChoices.includes(8))
-              {
-                alert("O won");
-          }
-           else if (
-              oChoices.includes(3) &&
-              oChoices.includes(4) &&
-              oChoices.includes(5))
-              {
-                alert("O won");
-          }
-
-           else if (
-              oChoices.includes(6) &&
-              oChoices.includes(7) &&
-              oChoices.includes(8))
-              {
-                alert("O won");
-          }
+        winningLogic(oChoices, secondPlayer)
         console.log("o chooses:", oChoices);
     }
 
@@ -157,5 +47,75 @@ main.addEventListener("click", (event) => {
         setTimeout(() => alert("Game over"), 0.5);
       }
 
-
 });
+
+
+function winningLogic(player, winner) {
+
+    if (
+        player.includes(2) &&
+        player.includes(5) &&
+        player.includes(8)
+      ) {
+        alert(`Player ${winner} won`);
+
+    }
+    else if (
+        player.includes(2) &&
+        player.includes(4) &&
+        player.includes(6))
+        {
+          alert(`Player ${winner} won`);
+
+    }
+      else if (
+        player.includes(0) &&
+        player.includes(1) &&
+        player.includes(2))
+        {
+          alert(`Player ${winner} won`);
+
+    }
+      else if (
+        player.includes(0) &&
+        player.includes(3) &&
+        player.includes(6))
+        {
+          alert(`Player ${winner} won`);
+
+    }
+      else if (
+        player.includes(1) &&
+        player.includes(4) &&
+        player.includes(7))
+        {
+          alert(`Player ${winner} won`);
+
+    }
+      else if (
+        player.includes(0) &&
+        player.includes(4) &&
+        player.includes(8))
+        {
+          alert(`Player ${winner} won`);
+
+    }
+      else if (
+        player.includes(3) &&
+        player.includes(4) &&
+        player.includes(5))
+        {
+          alert(`Player ${winner} won`);
+
+    }
+
+      else if (
+        player.includes(6) &&
+        player.includes(7) &&
+        player.includes(8))
+        {
+          alert(`Player ${winner} won`);
+
+    }
+
+}
