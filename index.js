@@ -89,6 +89,64 @@ main.addEventListener("click", (event) => {
         change = true;
         count = count + 1;
         oChoices.push([...main.children].indexOf(cross));
+
+        if (
+              oChoices.includes(2) &&
+              oChoices.includes(5) &&
+              oChoices.includes(8)
+            ) {
+              alert("O won");
+          }
+          else if (
+              oChoices.includes(2) &&
+              oChoices.includes(4) &&
+              oChoices.includes(6))
+              {
+                alert("O won");
+          }
+           else if (
+              oChoices.includes(0) &&
+              oChoices.includes(1) &&
+              oChoices.includes(2))
+              {
+                alert("O won");
+          }
+           else if (
+              oChoices.includes(0) &&
+              oChoices.includes(3) &&
+              oChoices.includes(6))
+              {
+                alert("O won");
+          }
+            else if (
+              oChoices.includes(1) &&
+              oChoices.includes(4) &&
+              oChoices.includes(7))
+              {
+                alert("O won");
+          }
+           else if (
+              oChoices.includes(0) &&
+              oChoices.includes(4) &&
+              oChoices.includes(8))
+              {
+                alert("O won");
+          }
+           else if (
+              oChoices.includes(3) &&
+              oChoices.includes(4) &&
+              oChoices.includes(5))
+              {
+                alert("O won");
+          }
+
+           else if (
+              oChoices.includes(6) &&
+              oChoices.includes(7) &&
+              oChoices.includes(8))
+              {
+                alert("O won");
+          }
         console.log("o chooses:", oChoices);
     }
 
