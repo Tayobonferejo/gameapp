@@ -24,6 +24,65 @@ main.addEventListener("click", (event) => {
         change = false;
         count = count + 1;
         xChoices.push([...main.children].indexOf(cross));
+
+          if (
+              xChoices.includes(2) &&
+              xChoices.includes(5) &&
+              xChoices.includes(8)
+            ) {
+              alert("X won");
+          }
+          else if (
+              xChoices.includes(2) &&
+              xChoices.includes(4) &&
+              xChoices.includes(6))
+              {
+                alert("X won");
+          }
+           else if (
+              xChoices.includes(0) &&
+              xChoices.includes(1) &&
+              xChoices.includes(2))
+              {
+                alert("X won");
+          }
+           else if (
+              xChoices.includes(0) &&
+              xChoices.includes(3) &&
+              xChoices.includes(6))
+              {
+                alert("X won");
+          }
+            else if (
+              xChoices.includes(1) &&
+              xChoices.includes(4) &&
+              xChoices.includes(7))
+              {
+                alert("X won");
+          }
+           else if (
+              xChoices.includes(0) &&
+              xChoices.includes(4) &&
+              xChoices.includes(8))
+              {
+                alert("X won");
+          }
+           else if (
+              xChoices.includes(3) &&
+              xChoices.includes(4) &&
+              xChoices.includes(5))
+              {
+                alert("X won");
+          }
+
+           else if (
+              xChoices.includes(6) &&
+              xChoices.includes(7) &&
+              xChoices.includes(8))
+              {
+                alert("X won");
+          }
+
         console.log("x chooses:", xChoices);
     } else {
         gameIcon.classList.add("fa-solid", "fa-circle");
