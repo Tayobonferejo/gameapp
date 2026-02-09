@@ -4,7 +4,8 @@ const main = document.getElementById("main")
 let xChoices = [];
 let oChoices = [];
 let xscore = 0;
-let oscore = 0
+let oscore = 0;
+let draw = 0;
 let change = true;
 let gameOver = false;
 let count = 0;
@@ -24,7 +25,8 @@ function winningLogic(player, winner) {
         player.includes(8)
       ) {
         won = true;
-        alert(`Player ${winner} won`);
+
+        winnerScore(winner);
 
     }
     else if (
@@ -33,7 +35,7 @@ function winningLogic(player, winner) {
         player.includes(6))
         {
           won = true;
-          alert(`Player ${winner} won`);
+          winnerScore(winner);
 
     }
       else if (
@@ -42,7 +44,7 @@ function winningLogic(player, winner) {
         player.includes(2))
         {
           won = true;
-          alert(`Player ${winner} won`);
+          winnerScore(winner);
 
     }
       else if (
@@ -51,7 +53,7 @@ function winningLogic(player, winner) {
         player.includes(6))
         {
           won = true;
-          alert(`Player ${winner} won`);
+          winnerScore(winner);
 
     }
       else if (
@@ -60,16 +62,15 @@ function winningLogic(player, winner) {
         player.includes(7))
         {
           won = true;
-          alert(`Player ${winner} won`);
-
-    }
+          winnerScore(winner);
+        }
       else if (
         player.includes(0) &&
         player.includes(4) &&
         player.includes(8))
         {
           won = true;
-          alert(`Player ${winner} won`);
+          winnerScore(winner);
 
     }
       else if (
@@ -78,7 +79,7 @@ function winningLogic(player, winner) {
         player.includes(5))
         {
           won = true;
-          alert(`Player ${winner} won`);
+          winnerScore(winner);
 
     }
 
@@ -88,7 +89,7 @@ function winningLogic(player, winner) {
         player.includes(8))
         {
           won = true;
-          alert(`Player ${winner} won`);
+          winnerScore(winner);
 
     }
 
@@ -145,5 +146,18 @@ function handleClick(event) {
       if (count === 9 && !gameOver) {
         setTimeout(() => alert("Game over, the game is a draw"), 500);
         gameOver = true;
+    }
+}
+
+function winnerScore(winner) {
+  if(winner === firstPlayer) {
+      xscore = xscore + 1;
+    }
+  else if (winner === secondPlayer)
+    {
+      oscore = oscore + 1;
+    }
+  else {
+      draw = draw + 1;
     }
 }
