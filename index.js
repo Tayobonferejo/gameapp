@@ -28,13 +28,8 @@ function winningLogic(player, winner) {
         player.includes(5) &&
         player.includes(8)
       ) {
-        return {
-          won: true,
-          score: winnerScore(winner),
-          winner: winner
-        };
-
-    }
+          won: true;
+        }
     else if (
         player.includes(2) &&
         player.includes(4) &&
@@ -52,11 +47,7 @@ function winningLogic(player, winner) {
         player.includes(1) &&
         player.includes(2))
         {
-          return {
-            won: true,
-            score: winnerScore(winner),
-            winner: winner
-        };
+            won: true;
 
     }
       else if (
@@ -64,47 +55,31 @@ function winningLogic(player, winner) {
         player.includes(3) &&
         player.includes(6))
         {
-          return {
-            won: true,
-            score: winnerScore(winner),
-            winner: winner
-  };
-
-    }
+          won: true;
+        }
       else if (
         player.includes(1) &&
         player.includes(4) &&
         player.includes(7))
         {
-            return {
               won: true,
-              score: winnerScore(winner),
-              winner: winner
-          };
+              
         }
       else if (
         player.includes(0) &&
         player.includes(4) &&
         player.includes(8))
         {
-         return {
             won: true,
-            score: winnerScore(winner),
-            winner: winner
-          };
-
+          
     }
       else if (
         player.includes(3) &&
         player.includes(4) &&
         player.includes(5))
         {
-          return {
             won: true,
-            score: winnerScore(winner),
-            winner: winner
-          };
-
+           
     }
 
       else if (
@@ -112,13 +87,8 @@ function winningLogic(player, winner) {
         player.includes(7) &&
         player.includes(8))
         {
-          return {
-            won: true,
-            score: winnerScore(winner),
-            winner: winner
-          };
-
-    }
+            won: true;
+        }
 
     return won;
 
