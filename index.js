@@ -1,5 +1,9 @@
 
-const main = document.getElementById("main")
+const main = document.getElementById("main");
+
+const xWin = document.getElementById("xscore");
+const bothDraw = document.getElementById("draw");
+const oWin = document.getElementById("oscore")
 
 let xChoices = [];
 let oChoices = [];
@@ -24,9 +28,11 @@ function winningLogic(player, winner) {
         player.includes(5) &&
         player.includes(8)
       ) {
-        won = true;
-
-        winnerScore(winner);
+        return {
+          won: true,
+          score: winnerScore(winner),
+          winner: winner
+        };
 
     }
     else if (
@@ -34,8 +40,11 @@ function winningLogic(player, winner) {
         player.includes(4) &&
         player.includes(6))
         {
-          won = true;
-          winnerScore(winner);
+          return {
+            won: true,
+            score: winnerScore(winner),
+            winner: winner
+          };
 
     }
       else if (
@@ -43,8 +52,11 @@ function winningLogic(player, winner) {
         player.includes(1) &&
         player.includes(2))
         {
-          won = true;
-          winnerScore(winner);
+          return {
+            won: true,
+            score: winnerScore(winner),
+            winner: winner
+        };
 
     }
       else if (
@@ -52,8 +64,11 @@ function winningLogic(player, winner) {
         player.includes(3) &&
         player.includes(6))
         {
-          won = true;
-          winnerScore(winner);
+          return {
+            won: true,
+            score: winnerScore(winner),
+            winner: winner
+  };
 
     }
       else if (
@@ -61,16 +76,22 @@ function winningLogic(player, winner) {
         player.includes(4) &&
         player.includes(7))
         {
-          won = true;
-          winnerScore(winner);
+            return {
+              won: true,
+              score: winnerScore(winner),
+              winner: winner
+          };
         }
       else if (
         player.includes(0) &&
         player.includes(4) &&
         player.includes(8))
         {
-          won = true;
-          winnerScore(winner);
+         return {
+            won: true,
+            score: winnerScore(winner),
+            winner: winner
+          };
 
     }
       else if (
@@ -78,8 +99,11 @@ function winningLogic(player, winner) {
         player.includes(4) &&
         player.includes(5))
         {
-          won = true;
-          winnerScore(winner);
+          return {
+            won: true,
+            score: winnerScore(winner),
+            winner: winner
+          };
 
     }
 
@@ -88,8 +112,11 @@ function winningLogic(player, winner) {
         player.includes(7) &&
         player.includes(8))
         {
-          won = true;
-          winnerScore(winner);
+          return {
+            won: true,
+            score: winnerScore(winner),
+            winner: winner
+          };
 
     }
 
