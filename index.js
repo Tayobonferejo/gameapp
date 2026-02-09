@@ -62,7 +62,7 @@ function winningLogic(player, winner) {
         player.includes(4) &&
         player.includes(7))
         {
-              won: true,
+              won: true;
               
         }
       else if (
@@ -70,7 +70,7 @@ function winningLogic(player, winner) {
         player.includes(4) &&
         player.includes(8))
         {
-            won: true,
+            won: true;
           
     }
       else if (
@@ -78,7 +78,7 @@ function winningLogic(player, winner) {
         player.includes(4) &&
         player.includes(5))
         {
-            won: true,
+            won: true;
            
     }
 
