@@ -3,6 +3,8 @@ const main = document.getElementById("main")
 
 let xChoices = [];
 let oChoices = [];
+let xscore = 0;
+let oscore = 0
 let change = true;
 let gameOver = false;
 let count = 0;

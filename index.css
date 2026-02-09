@@ -8,6 +8,7 @@ body {
     background-color: black;
     color: whitesmoke;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -24,9 +25,31 @@ main > div {
 main {
     display: grid;
     grid-template-columns: 100px 100px 100px;
-    grid-template-rows:  100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
 }
 
 i {
     font-size: 48px;
+}
+
+#score {
+    gap: 15px;
+    margin-top: 2rem;
+
+}
+
+#score, #score > div {
+    display: flex;
+    justify-content: center;
+}
+#score > div {
+    width: 80px;
+    height: 80px;
+    background-color: yellow;
+    border-radius: 5px;
+    color: black;
+
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
 }
