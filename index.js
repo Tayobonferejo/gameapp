@@ -3,7 +3,9 @@ const main = document.getElementById("main");
 
 const xWin = document.getElementById("xscore");
 const bothDraw = document.getElementById("draw");
-const oWin = document.getElementById("oscore")
+const oWin = document.getElementById("oscore");
+const popUp = document.getElementById("popSection");
+
 
 let xChoices = [];
 let oChoices = [];
@@ -117,6 +119,8 @@ function handleClick(event) {
          if (winningLogic(xChoices, firstPlayer)) {
             gameOver = true; 
             winnerScore(firstPlayer);
+            popUp.classList.add("link-section");
+            xWin.textContent= `${xscore}`;
             return;
         }
 
@@ -138,7 +142,9 @@ function handleClick(event) {
 
 
       if (count === 9 && !gameOver) {
-        // draw = draw + 1;
+        draw = draw + 1;
+        bothDraw.textContent= `${draw}`;
+        popUp.classList.add("link-section");
         gameOver = true;
     }
 }
@@ -146,9 +152,13 @@ function handleClick(event) {
 function winnerScore(winner) {
   if(winner === firstPlayer) {
       xscore = xscore + 1;
+      xWin.textContent= `${xscore}`;
+      popUp.classList.add("link-section");
     }
   else if (winner === secondPlayer)
     {
       oscore = oscore + 1;
+      oWin.textContent= `${oscore}`;
+      popUp.classList.add("link-section");
     }
   }
