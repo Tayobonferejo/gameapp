@@ -28,18 +28,14 @@ function winningLogic(player, winner) {
         player.includes(5) &&
         player.includes(8)
       ) {
-          won: true;
+          won = true;
         }
     else if (
         player.includes(2) &&
         player.includes(4) &&
         player.includes(6))
         {
-          return {
-            won: true,
-            score: winnerScore(winner),
-            winner: winner
-          };
+            won = true;
 
     }
       else if (
@@ -47,7 +43,7 @@ function winningLogic(player, winner) {
         player.includes(1) &&
         player.includes(2))
         {
-            won: true;
+            won =true;
 
     }
       else if (
@@ -55,14 +51,14 @@ function winningLogic(player, winner) {
         player.includes(3) &&
         player.includes(6))
         {
-          won: true;
+          won = true;
         }
       else if (
         player.includes(1) &&
         player.includes(4) &&
         player.includes(7))
         {
-              won: true;
+              won = true;
               
         }
       else if (
@@ -70,7 +66,7 @@ function winningLogic(player, winner) {
         player.includes(4) &&
         player.includes(8))
         {
-            won: true;
+            won = true;
           
     }
       else if (
@@ -78,7 +74,7 @@ function winningLogic(player, winner) {
         player.includes(4) &&
         player.includes(5))
         {
-            won: true;
+            won = true;
            
     }
 
@@ -87,11 +83,10 @@ function winningLogic(player, winner) {
         player.includes(7) &&
         player.includes(8))
         {
-            won: true;
+            won =  true;
         }
 
     return won;
-
 }
 
 
@@ -121,6 +116,7 @@ function handleClick(event) {
 
          if (winningLogic(xChoices, firstPlayer)) {
             gameOver = true; 
+            winnerScore(firstPlayer);
             return;
         }
 
@@ -134,6 +130,7 @@ function handleClick(event) {
 
         if (winningLogic(oChoices, secondPlayer)) {
             gameOver = true;   
+            winnerScore(secondPlayer);
             return;
         }
         console.log("o chooses:", oChoices);
@@ -141,7 +138,7 @@ function handleClick(event) {
 
 
       if (count === 9 && !gameOver) {
-        setTimeout(() => alert("Game over, the game is a draw"), 500);
+        // draw = draw + 1;
         gameOver = true;
     }
 }
@@ -154,7 +151,4 @@ function winnerScore(winner) {
     {
       oscore = oscore + 1;
     }
-  else {
-      draw = draw + 1;
-    }
-}
+  }
