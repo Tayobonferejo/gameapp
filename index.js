@@ -5,7 +5,8 @@ const xWin = document.getElementById("xscore");
 const bothDraw = document.getElementById("draw");
 const oWin = document.getElementById("oscore");
 const popUp = document.getElementById("popSection");
-
+const noPermit = document.getElementById("noPermit");
+const yesPermit = document.getElementById("yesPermit");
 
 let xChoices = [];
 let oChoices = [];
@@ -21,7 +22,7 @@ const secondPlayer = "O";
 main.addEventListener("click", handleClick)
 
 
-function winningLogic(player, winner) {
+function winningLogic(player) {
 
   let won = false;
 
@@ -94,6 +95,8 @@ function winningLogic(player, winner) {
 
 function handleClick(event) {
 
+  if (popUp.classList.contains("link-section")) return;
+
   if (gameOver) return;
      const cross = event.target.closest("div");
 
@@ -162,3 +165,27 @@ function winnerScore(winner) {
       popUp.classList.add("link-section");
     }
   }
+
+popUp.addEventListener("click", function(event) {
+  event.preventDefault();
+  event.stopPropagation();
+
+
+    if (event.target.id === "yesPermit") {
+        const icon = main.querySelectorAll("i");
+        icon.forEach(icon => icon.remove());
+        popUp.classList.remove("link-section");
+        gameOver = false;
+        change = true;
+        playerX = [];
+        playerO = [];
+        xChoices = [];  
+        oChoices = [];
+
+        count = 0; 
+    }
+
+    if (event.target.id === "noPermit") {
+        console.log("good");
+    }
+});
