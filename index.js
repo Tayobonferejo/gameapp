@@ -123,7 +123,6 @@ function winningLogic(player) {
     return won;
 }
 
-
 function handleClick(event) {
 
   if (popUp.classList.contains("link-section")) return;
@@ -195,7 +194,7 @@ function winnerScore(winner) {
       oscore = oscore + 1;
       oWin.textContent= `${oscore}`;
     }
-  }
+}
 
 popUp.addEventListener("click", function(event) {
   event.preventDefault();
@@ -216,12 +215,21 @@ popUp.addEventListener("click", function(event) {
         playerO = [];
         xChoices = [];  
         oChoices = [];
-
         count = 0; 
     }
 
     if (event.target.id === "noPermit") {
-        console.log("good");
+
+        popUp.innerHTML = "";
+        if(xscore > oscore) {
+          popUp.innerHTML = `<p>Player X won the game</p>`;
+        }
+        else if (oscore < xscore) {
+          popUp.innerHTML = `<p>Player O won the game</p>`
+        }
+        else {
+          popUp.innerHTML = `<p>the game is draw</p>`
+        }
     }
 });
 
