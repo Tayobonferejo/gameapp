@@ -153,7 +153,7 @@ function handleClick(event) {
          if (winningLogic(xChoices, firstPlayer)) {
             gameOver = true; 
             winnerScore(firstPlayer);
-            popUp.classList.add("link-section");
+            delayPopUp();
             xWin.textContent= `${xscore}`;
             return;
         }
@@ -169,6 +169,8 @@ function handleClick(event) {
         if (winningLogic(oChoices, secondPlayer)) {
             gameOver = true;   
             winnerScore(secondPlayer);
+            delayPopUp();
+            oWin.textContent = `${oscore}`;
             return;
         }
         console.log("o chooses:", oChoices);
@@ -178,7 +180,7 @@ function handleClick(event) {
       if (count === 9 && !gameOver) {
         draw = draw + 1;
         bothDraw.textContent= `${draw}`;
-        popUp.classList.add("link-section");
+        delayPopUp();
         gameOver = true;
     }
 }
@@ -187,7 +189,6 @@ function winnerScore(winner) {
   if(winner === firstPlayer) {
       xscore = xscore + 1;
       xWin.textContent= `${xscore}`;
-      popUp.classList.add("link-section");
     }
   else if (winner === secondPlayer)
     {
