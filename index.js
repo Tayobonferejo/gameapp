@@ -32,6 +32,11 @@ function winningLogic(player) {
         player.includes(8)
       ) {
           won = true;
+
+          // highlight winning cells
+          main.children[2].classList.add("win");
+          main.children[5].classList.add("win");
+          main.children[8].classList.add("win");
         }
     else if (
         player.includes(2) &&
@@ -40,28 +45,43 @@ function winningLogic(player) {
         {
             won = true;
 
-    }
+             // highlight winning cells
+            main.children[2].classList.add("win");
+            main.children[4].classList.add("win");
+            main.children[6].classList.add("win");
+          }
       else if (
         player.includes(0) &&
         player.includes(1) &&
         player.includes(2))
         {
             won =true;
-
-    }
+             // highlight winning cells
+            main.children[0].classList.add("win");
+            main.children[1].classList.add("win");
+            main.children[2].classList.add("win");
+        }
       else if (
         player.includes(0) &&
         player.includes(3) &&
         player.includes(6))
         {
           won = true;
+           // highlight winning cells
+          main.children[0].classList.add("win");
+          main.children[3].classList.add("win");
+          main.children[6].classList.add("win");
         }
       else if (
         player.includes(1) &&
         player.includes(4) &&
         player.includes(7))
         {
-              won = true;
+          won = true;
+            // highlight winning cells
+          main.children[1].classList.add("win");
+          main.children[4].classList.add("win");
+          main.children[7].classList.add("win");
               
         }
       else if (
@@ -70,16 +90,23 @@ function winningLogic(player) {
         player.includes(8))
         {
             won = true;
-          
-    }
+             // highlight winning cells
+            main.children[0].classList.add("win");
+            main.children[4].classList.add("win");
+            main.children[8].classList.add("win");
+        }
+
       else if (
         player.includes(3) &&
         player.includes(4) &&
         player.includes(5))
         {
             won = true;
-           
-    }
+             // highlight winning cells
+            main.children[3].classList.add("win");
+            main.children[4].classList.add("win");
+            main.children[5].classList.add("win");
+        }
 
       else if (
         player.includes(6) &&
@@ -87,6 +114,10 @@ function winningLogic(player) {
         player.includes(8))
         {
             won =  true;
+             // highlight winning cells
+          main.children[6].classList.add("win");
+          main.children[7].classList.add("win");
+          main.children[8].classList.add("win");
         }
 
     return won;

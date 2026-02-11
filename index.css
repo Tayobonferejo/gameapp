@@ -114,3 +114,8 @@ i {
 .popup-link.secondary:hover {
     background-color: #f8f9ff;
 }
+
+.win {
+  background-color: #4CAF50;   /* green */
+  color: white;
+}
