@@ -193,7 +193,6 @@ function winnerScore(winner) {
     {
       oscore = oscore + 1;
       oWin.textContent= `${oscore}`;
-      popUp.classList.add("link-section");
     }
   }
 
@@ -206,6 +205,10 @@ popUp.addEventListener("click", function(event) {
         const icon = main.querySelectorAll("i");
         icon.forEach(icon => icon.remove());
         popUp.classList.remove("link-section");
+        main.querySelectorAll(".win").forEach(cell =>
+          cell.classList.remove("win")
+        );
+
         gameOver = false;
         change = true;
         playerX = [];
@@ -220,3 +223,10 @@ popUp.addEventListener("click", function(event) {
         console.log("good");
     }
 });
+
+function delayPopUp (){
+    setTimeout(() => {
+      popUp.classList.add("link-section");
+    }, 1000); // 1000ms = 1 second
+
+}
